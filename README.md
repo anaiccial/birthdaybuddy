@@ -23,7 +23,7 @@ CakeBell, developed by Markus Gaeth, lets you delete your server-side data direc
 3. Scroll down and tap **"Delete my data"**
 4. Confirm by tapping **"Delete"**
 
-This immediately and permanently deletes your synced first names and birthdays, your reminder settings, and your device's push token from our database (see [What Data We Transmit](#what-data-we-transmit) below for exactly what that covers). Reminders are turned off until you re-enable them, which creates a fresh entry. **There is no additional retention period** — the database record is removed right away, not just deactivated.
+This immediately and permanently deletes your synced contact names and birthdays, your reminder settings, and your device's push token from our database (see [What Data We Transmit](#what-data-we-transmit) below for exactly what that covers). Reminders are turned off until you re-enable them, which creates a fresh entry. **There is no additional retention period** — the database record is removed right away, not just deactivated.
 
 If you've already uninstalled the App and still want your data deleted, email **anaiccial@icloud.com** with your approximate last-use date and device type (iOS/Android).
 
@@ -35,13 +35,13 @@ If you've already uninstalled the App and still want your data deleted, email **
 - **User Preferences**: Your settings including reminder times, intervals, and relationship categorizations
 
 ### What Data We Transmit
-To provide reliable birthday reminders via push notifications, the following minimal data is securely transmitted to our servers:
-- **First names and birthday dates** (month and day only) of contacts with birthdays
+To provide reliable birthday reminders via push notifications, the following data is securely transmitted to our servers:
+- **The full name (as stored in your address book) and birthday date** (month and day only) of contacts with birthdays
 - **Your reminder settings** (reminder time, interval, enabled/disabled)
 - **Your device's push notification token** (assigned by Apple/Google, not personally identifiable)
 
 ### What Data We Do NOT Transmit
-- No last names, phone numbers, email addresses, or photos
+- No phone numbers, email addresses, or photos
 - No contact data of people without birthdays
 - No message content or communication history
 - No device identifiers, location data, or usage analytics
@@ -60,9 +60,9 @@ We use the collected data solely to:
 
 ## Data Sharing
 
-**We do not share, sell, or transmit your data to any third parties.**
+**We do not sell your data, and we do not share it with third parties for advertising or marketing.**
 
-Push notifications are delivered through Expo's push notification service, which acts as a relay to Apple Push Notification Service (APNs) and Google Firebase Cloud Messaging (FCM). No personal contact data is included in the push notification payload — only reminder text.
+Push notifications are delivered through Expo's push notification service, which acts as a relay to Apple Push Notification Service (APNs) and Google Firebase Cloud Messaging (FCM). The notification text itself includes the name of the contact whose birthday it is (e.g. "🎂 Anna Schmidt has a birthday today!"), so that name passes through Expo, Apple, and/or Google as part of delivering the notification to your device. No other contact data (phone number, email, photo) is included in the notification payload.
 
 The App interacts with messaging applications (SMS, WhatsApp, Threema, Telegram) only when you explicitly choose to send a birthday message. These interactions are handled directly by the respective apps on your device.
 
